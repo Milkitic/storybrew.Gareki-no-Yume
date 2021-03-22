@@ -5,36 +5,175 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:FontGenerator"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     Name="self"
     Title="MainWindow"
     Width="800"
-    Height="450"
+    Height="600"
     Background="Black"
-    FontFamily="UD Digi Kyokasho NK-R"
     Initialized="MainWindow_OnInitialized"
     Loaded="MainWindow_OnLoaded"
     mc:Ignorable="d">
+    <Window.Resources>
+        <system:Double x:Key="intFontS">64</system:Double>
+        <system:Double x:Key="intFontL">288</system:Double>
+        <SolidColorBrush x:Key="ForeColor">White</SolidColorBrush>
+    </Window.Resources>
+    <!--<Window.FontFamily>微软雅黑 light</Window.FontFamily>-->
+    <!--<Window.FontFamily>UD Digi Kyokasho NK-R</Window.FontFamily>-->
     <Grid>
-        <StackPanel TextBlock.FontSize="32" TextBlock.Foreground="White">
-            <!--<TextBlock FontSize="32" Text="瓦礫に積もる置き去りの愚者" />-->
-            <ItemsControl x:Name="itemChar" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+        <Viewbox Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel TextBlock.Foreground="{StaticResource ForeColor}" Width="7680">
+                <!--<TextBlock.FontSize>288</TextBlock.FontSize>-->
+                <!--<TextBlock.FontFamily>pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai</TextBlock.FontFamily>-->
+                <!--<TextBlock.FontFamily>pack://application:,,,/FontGenerator;component/Fonts/#onryou</TextBlock.FontFamily>-->
+                <!--<TextBlock.FontFamily>pack://application:,,,/FontGenerator;component/Fonts/#sweet calligraphy</TextBlock.FontFamily>-->
+                <ItemsControl x:Name="itemChar_1l" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontL}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+                <ItemsControl x:Name="itemStroke_1l" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontL}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
+                                <local:OutlinedTextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Fill="Transparent"
+                                    Stroke="{StaticResource ForeColor}"
+                                    StrokeThickness="2"
+                                    Text="{Binding}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                
+                <ItemsControl x:Name="itemChar_2l" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontL}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+                <ItemsControl x:Name="itemStroke_2l" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontL}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
+                                <local:OutlinedTextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Fill="Transparent"
+                                    Stroke="{StaticResource ForeColor}"
+                                    StrokeThickness="2"
+                                    Text="{Binding}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+                <ItemsControl x:Name="itemChar_3l" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontL}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#onryou">
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+                <ItemsControl x:Name="itemStroke_3l" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontL}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#onryou">
+                                <local:OutlinedTextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Fill="Transparent"
+                                    Stroke="{StaticResource ForeColor}"
+                                    StrokeThickness="2"
+                                    Text="{Binding}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+            </StackPanel>
+        </Viewbox>
+        <StackPanel TextBlock.Foreground="{StaticResource ForeColor}" Width="7680">
+            <!--<TextBlock.FontSize>288</TextBlock.FontSize>-->
+            <!--<TextBlock.FontFamily>pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai</TextBlock.FontFamily>-->
+            <!--<TextBlock.FontFamily>pack://application:,,,/FontGenerator;component/Fonts/#onryou</TextBlock.FontFamily>-->
+            <!--<TextBlock.FontFamily>pack://application:,,,/FontGenerator;component/Fonts/#sweet calligraphy</TextBlock.FontFamily>-->
+            <ItemsControl x:Name="itemChar_1S" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid Margin="2" Tag="{Binding}">
+                        <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontS}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
                             <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Text="{Binding}" />
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="36"
-                                Text="{Binding}">
-                                <TextBlock.Visibility>Hidden</TextBlock.Visibility>
-                                <TextBlock.Effect>
-                                    <BlurEffect Radius="12" />
-                                </TextBlock.Effect>
-                            </TextBlock>
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding}" />
                         </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
@@ -44,24 +183,20 @@
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
-            <ItemsControl x:Name="itemBlur" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+
+            <ItemsControl x:Name="itemStroke_1S" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid Margin="2" Tag="{Binding}">
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Text="{Binding}"
-                                Visibility="Hidden" />
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="36"
-                                Text="{Binding}">
-                                <TextBlock.Effect>
-                                    <BlurEffect Radius="12" />
-                                </TextBlock.Effect>
-                            </TextBlock>
+                        <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontS}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
+                            <local:OutlinedTextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Fill="Transparent"
+                                    Stroke="{StaticResource ForeColor}"
+                                    StrokeThickness="1"
+                                    Text="{Binding}" />
                         </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
@@ -71,6 +206,93 @@
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
+
+            <ItemsControl x:Name="itemChar_2S" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontS}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
+                            <TextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding}" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
+            <ItemsControl x:Name="itemStroke_2S" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontS}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
+                            <local:OutlinedTextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Fill="Transparent"
+                                    Stroke="{StaticResource ForeColor}"
+                                    StrokeThickness="1"
+                                    Text="{Binding}" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
+            <ItemsControl x:Name="itemChar_3S" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontS}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#onryou">
+                            <TextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding}" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
+            <ItemsControl x:Name="itemStroke_3S" ItemsSource="{Binding ElementName=self, Path=AllCharacters}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Tag="{Binding}"
+                                  TextBlock.FontSize="{StaticResource intFontS}"
+                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#onryou">
+                            <local:OutlinedTextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Fill="Transparent"
+                                    Stroke="{StaticResource ForeColor}"
+                                    StrokeThickness="1"
+                                    Text="{Binding}" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
         </StackPanel>
         <Button
             Margin="5"

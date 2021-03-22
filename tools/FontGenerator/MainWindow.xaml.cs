@@ -25,7 +25,8 @@ namespace FontGenerator
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private char[] _allCharacters;
-        const string BaseFolder = @"D:\Games\osu!\Songs\1037741 Denkishiki Karen Ongaku Shuudan - Gareki no Yume\SB";
+        private const string SongFolder = @"C:\Users\milki\Desktop";
+        private const string BaseFolder = SongFolder + "\\" + @"1037741 Denkishiki Karen Ongaku Shuudan - Gareki no Yume\SB";
 
         public MainWindow()
         {
@@ -73,28 +74,54 @@ namespace FontGenerator
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            SaveVisualTreeImages(itemChar);
-            SaveVisualTreeImages(itemBlur, "_b");
+            SaveVisualTreeImages(itemChar_1l, "_1L");
+            SaveVisualTreeImages(itemStroke_1l, "_st_1L");
+            SaveVisualTreeImages(itemChar_2l, "_2L");
+            SaveVisualTreeImages(itemStroke_2l, "_st_2L");
+            SaveVisualTreeImages(itemChar_3l, "_3L");
+            SaveVisualTreeImages(itemStroke_3l, "_st_3L");
+
+            SaveVisualTreeImages(itemChar_1S, "_1S");
+            SaveVisualTreeImages(itemStroke_1S, "_st_1S");
+            SaveVisualTreeImages(itemChar_2S, "_2S");
+            SaveVisualTreeImages(itemStroke_2S, "_st_2S");
+            SaveVisualTreeImages(itemChar_3S, "_3S");
+            SaveVisualTreeImages(itemStroke_3S, "_st_3S");
         }
 
         private void SaveVisualTreeImages(ItemsControl itemsControl, string postFix = "")
         {
             var grids = FindVisualChildren<Grid>(itemsControl).ToArray();
-            var targetFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "output");
+            var targetFolder = Path.Combine(BaseFolder, "output");
             if (!Directory.Exists(targetFolder))
                 Directory.CreateDirectory(targetFolder);
             foreach (var grid in grids)
             {
                 var name = grid.Tag.ToString() ?? "";
-                var fileName =
-                    Convert.ToBase64String(Encoding.UTF8.GetBytes(name))
-                        .Replace("\\", "nmsl")
-                        .Replace("/", "slnm")
-                    + postFix + ".png";
+                var fileName = ConvertToFileName(name, postFix);
                 var image = GetImageByVisual(grid, new Size(grid.ActualWidth, grid.ActualHeight));
                 image.Save(Path.Combine(targetFolder, fileName));
                 image.Dispose();
             }
+        }
+
+        private static string ConvertToFileName(string name, string postFix)
+        {
+            var fileName =
+                Convert.ToBase64String(Encoding.UTF8.GetBytes(name))
+                    .Replace("\\", "$a$")
+                    .Replace("/", "$b$")
+                    .Replace(":", "$c$")
+                    .Replace("*", "$d$")
+                    .Replace("?", "$e$")
+                    .Replace("\"", "$f$")
+                    .Replace("<", "$g$")
+                    .Replace(">", "$h$")
+                    .Replace("|", "$i$")
+                    .Replace(",", "$1$")
+                    .Replace("'", "$2$")
+                + postFix + ".png";
+            return fileName;
         }
 
         public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
