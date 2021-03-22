@@ -1,0 +1,14 @@
+﻿FormatVersion: 7
+Name: "BG 1"
+Script: "BG"
+Config:
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  6c1f139c53b342c6a275ff0745d3c790:
+    Name: "Back"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: No
