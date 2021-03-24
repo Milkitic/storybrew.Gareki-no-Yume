@@ -25,7 +25,7 @@ namespace FontGenerator
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private char[] _allCharacters;
-        private const string SongFolder = @"C:\Users\milki\Desktop";
+        private const string SongFolder = @"D:\Games\osu!\Songs";
         private const string BaseFolder = SongFolder + "\\" + @"1037741 Denkishiki Karen Ongaku Shuudan - Gareki no Yume\SB";
 
         public MainWindow()

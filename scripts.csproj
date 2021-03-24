@@ -53,12 +53,13 @@
   -->
   <ItemGroup>
     <Compile Include="BG.cs" />
+    <Compile Include="EffectScript.cs" />
+    <Compile Include="Lyric3.cs" />
     <Compile Include="tools/FontGenerator/Annotations.cs" />
     <Compile Include="tools/FontGenerator/App.xaml.cs" />
     <Compile Include="tools/FontGenerator/AssemblyInfo.cs" />
     <Compile Include="tools/FontGenerator/MainWindow.xaml.cs" />
     <Compile Include="tools/FontGenerator/OutlinedTextBlock.cs" />
-    <Compile Include="tools/FontGenerator/Program.cs" />
     <Compile Include="tools/FontGenerator/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
     <Compile Include="tools/FontGenerator/obj/Debug/net5.0/FontGenerator.AssemblyInfo.cs" />
     <Compile Include="tools/FontGenerator/obj/Debug/net5.0-windows/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
