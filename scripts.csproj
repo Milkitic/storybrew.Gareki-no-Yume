@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="BG.cs" />
     <Compile Include="EffectScript.cs" />
+    <Compile Include="KiaiWaifu.cs" />
     <Compile Include="Lyric3.cs" />
     <Compile Include="tools/FontGenerator/Annotations.cs" />
     <Compile Include="tools/FontGenerator/App.xaml.cs" />
