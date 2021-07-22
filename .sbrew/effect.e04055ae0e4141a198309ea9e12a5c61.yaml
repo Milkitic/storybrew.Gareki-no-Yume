@@ -1,0 +1,14 @@
+﻿FormatVersion: 7
+Name: "MainSong 1"
+Script: "MainSong"
+Config:
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  0a3b2d30e02447a3ad39b313593388b8:
+    Name: "main"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes

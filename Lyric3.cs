@@ -145,15 +145,19 @@ namespace StorybrewScripts
             }
         }
 
-        private static void SetAction(string word, string font, string changeFont, StoryboardLayer layer, Vector2 position, int startTime, double targetSize, double? originalSize = null)
+        private void SetAction(string word, string font, string changeFont, StoryboardLayer layer, Vector2 position, int startTime, double targetSize, double? originalSize = null)
         {
             if (originalSize == null) originalSize = 2;
+
             var word2 = layer.CreateSprite(ConvertToFileName(word, "_st_" + font + "L"), OsbOrigin.Centre, position);
             word2.Scale(OsbEasing.Out, startTime, startTime + One2Eight * 3, originalSize.Value, targetSize);
             word2.Fade(startTime, startTime + One2Eight * 2, 1, 1);
             word2.Fade(startTime + One2Eight * 2, 0);
             word2.Fade(startTime + One2Eight * 4, startTime + One2Eight * 6, 1, 1);
-            var word2_s = layer.CreateSprite(ConvertToFileName(word, "_" + changeFont + "L"), OsbOrigin.Centre, position);
+
+            const int offset = 75;
+            var position1 = new Vector2(position.X + Random(-offset, offset), position.Y + Random(-offset, offset));
+            var word2_s = layer.CreateSprite(ConvertToFileName(word, "_" + changeFont + "L"), OsbOrigin.Centre, position1);
             word2_s.Scale(OsbEasing.None, startTime, startTime + One2Eight * 3, originalSize.Value, targetSize);
             word2_s.Fade(startTime, 0);
             word2_s.Fade(startTime + One2Eight * 2, startTime + One2Eight * 4, 1, 1);

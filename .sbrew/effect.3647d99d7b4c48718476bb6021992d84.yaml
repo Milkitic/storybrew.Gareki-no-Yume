@@ -1,0 +1,29 @@
+﻿FormatVersion: 7
+Name: "JingwuEffect 2"
+Script: "JingwuEffect"
+Config:
+  WtfTheBg:
+    Type: "System.String"
+    Value: "SB\\cg\\1105_n_8500.jpg"
+  StartTime:
+    Type: "System.Int32"
+    Value: "24121"
+  R:
+    Type: "System.Int32"
+    Value: "242"
+  G:
+    Type: "System.Int32"
+    Value: "120"
+  B:
+    Type: "System.Int32"
+    Value: "120"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  a14813284e1643dd8bd9e94233dd4cf8:
+    Name: "waifu"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes

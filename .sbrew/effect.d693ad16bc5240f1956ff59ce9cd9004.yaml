@@ -1,0 +1,17 @@
+﻿FormatVersion: 7
+Name: "JingwuPreEffect 1"
+Script: "JingwuPreEffect"
+Config:
+  StartTime:
+    Type: "System.Int32"
+    Value: "18121"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  abcd6a5d47f247868e2425304e8acb52:
+    Name: "waifu"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes

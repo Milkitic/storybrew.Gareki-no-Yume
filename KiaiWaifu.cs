@@ -19,7 +19,7 @@ namespace StorybrewScripts
         public override void Generate()
         {
             var layer = GetLayer("waifu");
-            var bg = layer.CreateSprite(@"SB\cg\waifu.png", OsbOrigin.CentreRight);
+            var bg = layer.CreateSprite(@"SB\cg\waifu2.png", OsbOrigin.CentreRight);
             bg.Scale(StartTime, 1.5);
             bg.Rotate((OsbEasing)6, StartTime, 60074, 0.9, 0.2);
             bg.MoveX((OsbEasing)0, StartTime, 60074, 600, 1100);
@@ -46,7 +46,7 @@ namespace StorybrewScripts
             bg.Fade(0, fixTime - 200, fixTime + 200, 0, 0);
             bg.Fade(fixTime + 200, 1);
 
-            var bgEasingFix = layer.CreateSprite(@"SB\cg\waifu.png", OsbOrigin.CentreRight);
+            var bgEasingFix = layer.CreateSprite(@"SB\cg\waifu2.png", OsbOrigin.CentreRight);
             bgEasingFix.Scale(0, fixTime - 200, fixTime + 200, 0.863, 0.841);
             bgEasingFix.MoveX(0, fixTime - 200, fixTime + 200, 781.5, 771);
             bgEasingFix.MoveY(0, fixTime - 200, fixTime + 200, 308.5, 292.5);
@@ -75,24 +75,25 @@ namespace StorybrewScripts
             bgRed.MoveX((OsbEasing)10, 64246, 66871, 330, 350);
             bgRed.Scale((OsbEasing)10, 64246, 66871, 0.5, 0.7);
 
+            var bg22 = layer.CreateSprite(@"SB\cg\waifu2.png", OsbOrigin.Centre, new Vector2(380, 240));
+            bg22.Scale((OsbEasing)10, 66871, 67621, 1, 1);
+            bg22.MoveY((OsbEasing)10, 66871, 67621, 140, 440);
+            bg22.MoveY((OsbEasing)9, 67821, 69133, 440, 940);
+
             var bgRed2 = layer.CreateSprite(@"SB\cg\waifu_red.png", OsbOrigin.Centre, new Vector2(380, 240));
+            bgRed2.Fade((OsbEasing)10, 66871, 67421, 1, 0);
             bgRed2.Scale((OsbEasing)10, 66871, 67621, 1, 1);
             bgRed2.MoveY((OsbEasing)10, 66871, 67621, 140, 440);
-            bgRed2.Fade((OsbEasing)10, 67621 - 300, 67621, 1, 0);
-            var bg22 = layer.CreateSprite(@"SB\cg\waifu.png", OsbOrigin.Centre, new Vector2(380, 240));
-            bg22.Scale((OsbEasing)10, 66871, 67621, 1, 1);
-            bg22.Fade((OsbEasing)10, 66871, 67621, 0, 1);
-            bg22.MoveY((OsbEasing)10, 66871, 67621, 140, 440);
-            bg22.MoveY((OsbEasing)9, 67621, 68933, 440, 940);
+            // bgRed2.Fade((OsbEasing)10, 67621 - 300, 67621, 1, 0);
 
-            var bg22_fixEase = layer.CreateSprite(@"SB\cg\waifu.png", OsbOrigin.Centre, new Vector2(380, 240));
+            var bg22_fixEase = layer.CreateSprite(@"SB\cg\waifu2.png", OsbOrigin.Centre, new Vector2(380, 240));
             bg22.Fade(66871, 1);
-            bg22.Fade(67621, 0);
-            bg22.Fade(67996 + 200, 1);
+            bg22.Fade(67421, 0);
+            bg22.Fade(67996 + 370, 1);
 
-            bg22_fixEase.Scale((OsbEasing)0, 67621, 67996, 1, 1);
-            bg22_fixEase.Fade(67621, 1);
-            bg22_fixEase.MoveY((OsbEasing)0, 67621, 67996 + 200, 440, 460);
+            bg22_fixEase.Scale((OsbEasing)0, 67421, 67996, 1, 1);
+            bg22_fixEase.Fade(67421, 1);
+            bg22_fixEase.MoveY((OsbEasing)0, 67421, 67996 + 370, 438, 455);
             // bg.Scale((OsbEasing)0, 60120 + (61620 - 60120) / 2, 60120 + (61620 - 60120), 1, 0.7);
             // bg.MoveX((OsbEasing)0, 60120 + (61620 - 60120) / 2, 60120 + (61620 - 60120), 850, 700);
             // bg.MoveY((OsbEasing)0, 60120 + (61620 - 60120) / 2, 60120 + (61620 - 60120), 200, 200);
