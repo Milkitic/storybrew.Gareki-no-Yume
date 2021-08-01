@@ -9,6 +9,7 @@ using StorybrewCommon.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace StorybrewScripts
 {
@@ -31,6 +32,9 @@ namespace StorybrewScripts
             var newEt = StartTime + 23746 - 18121;
             Scene(layer, StartTime, trueEndTime, endTime, count, startX, endX, startY, endY);
             Scene(layer, newSt, newTe, newEt, count, endX - 150, startX - 150, startY, endY, true);
+
+            RenderSentence(layer);
+            RenderSentence(layer, true);
         }
 
         private void Scene(StoryboardLayer layer, int startTime, int trueEndTime, int endTime, int count, int startX, int endX,
@@ -88,6 +92,62 @@ namespace StorybrewScripts
             }
         }
 
+        private void RenderSentence(StoryboardLayer layer, bool red = false)
+        {
+            var start = StartTime + (red ? 22621 : 18121) - 18121;
+            var unknownWords = new[] { "真実", "恐怖", "悲し", "境界", "束約", "獄地", "園楽", "霊悪" };
+            var words = red ? unknownWords.Skip(4).Take(4).ToArray() : unknownWords.Take(4).ToArray();
+            int x = red ? 480 : 160;
+            double y = 230;
+            var k = 0;
+            for (int i = 0; i < words.Length; i++)
+            {
+                for (int j = 0; j < words[i].Length; j++)
+                {
+                    var c = words[i][j];
+                    Log(c);
+                    var fn = ConvertToFileName(c.ToString(), "_2S");
+                    var sprite = layer.CreateSprite(fn, red ? OsbOrigin.CentreRight : OsbOrigin.CentreLeft);
+                    var tx = x + Random(-2, 2);
+                    var ty = y + Random(-2, 2);
+                    sprite.MoveX(start, start + (19621 - 18121), tx, tx + (red ? 400 : -400));
+                    MoveRandomly(sprite, start, start + (19621 - 18121), ty, ty - 50);
+                    // sprite.MoveY(18121, 19621, ty, ty - 50);
+                    sprite.Rotate(start, red ? -0.14 : 0.14);
+                    if (red)
+                        sprite.Color(start, 1, 0.8, 0.8);
+                    else
+                        sprite.Color(start, 0.8, 1, 0.8);
+                    sprite.Scale(start + (19621 - 18121), Random(0.6, 0.9));
+                    sprite.Fade((OsbEasing)1, start + (18496 - 18121) + k * 55,
+                        start + (18496 - 18121) + k * 55 + 100, 0, 0.8);
+                    x += red ? -80 : 80;
+                    y += 10;
+                    k++;
+                }
+
+                var count = Random(2, 4);
+                for (int j = 0; j < count; j++)
+                {
+                    var sprite = layer.CreateSprite(@"SB\components\round.png",
+                        red ? OsbOrigin.CentreRight : OsbOrigin.CentreLeft);
+                    var tx = x + Random(-2, 2);
+                    var ty = y + Random(-2, 2);
+                    sprite.MoveX(start, start + (19621 - 18121), tx, tx + (red ? 400 : -400));
+                    MoveRandomly(sprite, start, start + (19621 - 18121), ty, ty - 50);
+                    // sprite.MoveY(18121, 19621, ty, ty - 50);
+                    sprite.Rotate(start, red ? -0.14 : 0.14);
+                    sprite.Scale(start + (19621 - 18121), Random(0.01, 0.02));
+                    sprite.Fade((OsbEasing)1, start + (18496 - 18121) + k * 55,
+                        start + (18496 - 18121) + k * 55 + 100, 0, 0.6);
+                    x += red ? -25 : 25;
+                    y += 3;
+                    k++;
+                }
+
+            }
+        }
+
         private void MoveRandomly(OsbSprite sprite, double st, double et, double y0, double y1)
         {
             var count = 50;
@@ -98,6 +158,25 @@ namespace StorybrewScripts
                 var y = y0 + v * t;
                 sprite.MoveY(st + t, y + Random(-3, 3));
             }
+        }
+
+        private static string ConvertToFileName(string name, string postFix)
+        {
+            var fileName =
+                Convert.ToBase64String(Encoding.UTF8.GetBytes(name))
+                    .Replace("\\", "$a$")
+                    .Replace("/", "$b$")
+                    .Replace(":", "$c$")
+                    .Replace("*", "$d$")
+                    .Replace("?", "$e$")
+                    .Replace("\"", "$f$")
+                    .Replace("<", "$g$")
+                    .Replace(">", "$h$")
+                    .Replace("|", "$i$")
+                    .Replace(",", "$1$")
+                    .Replace("'", "$2$")
+                + postFix + ".png";
+            return @"SB\output\" + fileName;
         }
     }
 }

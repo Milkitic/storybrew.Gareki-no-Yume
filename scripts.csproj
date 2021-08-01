@@ -53,11 +53,14 @@
   -->
   <ItemGroup>
     <Compile Include="BG.cs" />
+    <Compile Include="BlackBlockFilterEffect.cs" />
+    <Compile Include="DirtyFilterEffect.cs" />
     <Compile Include="EffectScript.cs" />
     <Compile Include="FullKira.cs" />
     <Compile Include="FullKiraBg.cs" />
     <Compile Include="JingwuEffect.cs" />
     <Compile Include="JingwuPreEffect.cs" />
+    <Compile Include="KiaiTexts.cs" />
     <Compile Include="KiaiWaifu.cs" />
     <Compile Include="KiaiWaifu2.cs" />
     <Compile Include="Lyric3.cs" />

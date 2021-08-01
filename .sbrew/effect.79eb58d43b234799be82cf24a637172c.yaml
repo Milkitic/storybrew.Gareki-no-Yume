@@ -5,6 +5,9 @@ Config:
   StartTime:
     Type: "System.Int32"
     Value: "69683"
+  SkipNext:
+    Type: "System.Boolean"
+    Value: "False"
   RandomSeed:
     Type: "System.Int32"
     Value: "69631"

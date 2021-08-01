@@ -1,20 +1,20 @@
 ﻿FormatVersion: 7
-Name: "FullKira 1"
-Script: "FullKira"
+Name: "DirtyFilterEffect 5"
+Script: "DirtyFilterEffect"
 Config:
   StartTime:
     Type: "System.Int32"
-    Value: "57683"
-  SkipNext:
-    Type: "System.Boolean"
-    Value: "False"
+    Value: "43245"
+  EndTime:
+    Type: "System.Int32"
+    Value: "43620"
   RandomSeed:
     Type: "System.Int32"
     Value: "0"
     DisplayName: "Random seed"
 Layers:
-  24eb30118bc74cb295cf219e8308f2e8:
-    Name: "waifu"
+  45cafa73781e4f70be30ca2c33ba4605:
+    Name: "filter"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes

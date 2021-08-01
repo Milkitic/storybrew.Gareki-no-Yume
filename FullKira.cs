@@ -16,11 +16,14 @@ namespace StorybrewScripts
     {
         [Configurable]
         public int StartTime = 57683;
+        [Configurable]
+        public bool SkipNext = false;
         public override void Generate()
         {
             var elapsed = (58058 - 57870) * 1;
             var layer = GetLayer("waifu");
             RenderPreKira(layer);
+            if (SkipNext) return;
 
             var bg = layer.CreateSprite(@"SB\components\bg.jpg");
             bg.Fade(StartTime, StartTime + (57870 - 57683), 0.1, 0);
@@ -159,6 +162,7 @@ namespace StorybrewScripts
         private void RenderPreKira(StoryboardLayer layer)
         {
             var trueStart = StartTime - (57683 - 57120);
+            if (SkipNext) trueStart = StartTime;
             var bg = layer.CreateSprite(@"SB\components\bg.jpg");
             bg.Fade(trueStart, trueStart + (57402 - 57120), 0.4, 0.4);
             bg.MoveX((OsbEasing)1, trueStart, trueStart + (57402 - 57120), 320, 340);
