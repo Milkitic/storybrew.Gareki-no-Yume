@@ -1,0 +1,20 @@
+﻿FormatVersion: 7
+Name: "FullKira 5"
+Script: "FullKira"
+Config:
+  StartTime:
+    Type: "System.Int32"
+    Value: "116183"
+  SkipNext:
+    Type: "System.Boolean"
+    Value: "False"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  7cdc4b848eaa4b2b867f2f5d7e4a27df:
+    Name: "waifu"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes

@@ -160,23 +160,23 @@ namespace StorybrewScripts
             }
         }
 
-        private static string ConvertToFileName(string name, string postFix)
+        private string StringToUnicode(string srcText)
         {
-            var fileName =
-                Convert.ToBase64String(Encoding.UTF8.GetBytes(name))
-                    .Replace("\\", "$a$")
-                    .Replace("/", "$b$")
-                    .Replace(":", "$c$")
-                    .Replace("*", "$d$")
-                    .Replace("?", "$e$")
-                    .Replace("\"", "$f$")
-                    .Replace("<", "$g$")
-                    .Replace(">", "$h$")
-                    .Replace("|", "$i$")
-                    .Replace(",", "$1$")
-                    .Replace("'", "$2$")
-                + postFix + ".png";
-            return @"SB\output\" + fileName;
+            string dst = "";
+            char[] src = srcText.ToCharArray();
+            for (int i = 0; i < src.Length; i++)
+            {
+                byte[] bytes = Encoding.Unicode.GetBytes(src[i].ToString());
+                string str = @"" + bytes[1].ToString("X2") + bytes[0].ToString("X2");
+                dst += str;
+            }
+            return dst;
+        }
+
+        private string ConvertToFileName(string name, string postFix)
+        {
+            var fileName = @"SB\output\" + StringToUnicode(name) + postFix + ".png";
+            return fileName;
         }
     }
 }

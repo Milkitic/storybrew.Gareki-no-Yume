@@ -25,7 +25,7 @@ namespace FontGenerator
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private char[] _allCharacters;
-        private const string SongFolder = @"D:\Games\osu!\Songs";
+        private const string SongFolder = @"E:\Games\osu!\Songs";
         private const string BaseFolder = SongFolder + "\\" + @"1037741 Denkishiki Karen Ongaku Shuudan - Gareki no Yume\SB";
 
         public MainWindow()
@@ -105,22 +105,22 @@ namespace FontGenerator
             }
         }
 
+        private static string StringToUnicode(string srcText)
+        {
+            string dst = "";
+            char[] src = srcText.ToCharArray();
+            for (int i = 0; i < src.Length; i++)
+            {
+                byte[] bytes = Encoding.Unicode.GetBytes(src[i].ToString());
+                string str = @"" + bytes[1].ToString("X2") + bytes[0].ToString("X2");
+                dst += str;
+            }
+            return dst;
+        }
+
         private static string ConvertToFileName(string name, string postFix)
         {
-            var fileName =
-                Convert.ToBase64String(Encoding.UTF8.GetBytes(name))
-                    .Replace("\\", "$a$")
-                    .Replace("/", "$b$")
-                    .Replace(":", "$c$")
-                    .Replace("*", "$d$")
-                    .Replace("?", "$e$")
-                    .Replace("\"", "$f$")
-                    .Replace("<", "$g$")
-                    .Replace(">", "$h$")
-                    .Replace("|", "$i$")
-                    .Replace(",", "$1$")
-                    .Replace("'", "$2$")
-                + postFix + ".png";
+            var fileName = StringToUnicode(name) + postFix + ".png";
             return fileName;
         }
 

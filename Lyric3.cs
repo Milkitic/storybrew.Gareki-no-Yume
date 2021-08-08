@@ -20,6 +20,11 @@ namespace StorybrewScripts
         public int StartTime = 45120;
         const int One2Eight = (45167 - 45120) / 2;
 
+        private double rt(double time)
+        {
+            return StartTime + (time - 45120);
+        }
+
         public override void Generate()
         {
             var layer = GetLayer("lyric");
@@ -29,8 +34,8 @@ namespace StorybrewScripts
         private void Text2(StoryboardLayer layer)
         {
             var bg = layer.CreateSprite(@"SB\components\bg.jpg");
-            bg.Fade(50370, 51120, 1, 1);
-            bg.Color(50370, 0.5, 0, 0);
+            bg.Fade(rt(50370), rt(51120), 1, 1);
+            bg.Color(rt(50370), 0.5, 0, 0);
 
             for (int i = 0; i < 3; i++)
             {
@@ -43,43 +48,43 @@ namespace StorybrewScripts
                     x = 316;
 
                 var hito = layer.CreateSprite(@"SB\cg\waifu_red_h.png");
-                hito.Move(50370, 51120 + 500, x, 240, 320, 240);
-                hito.Fade(50370, 0.3);
-                hito.Fade(51120, 0);
-                hito.Additive(50370);
-                hito.Scale(50370, 51120, 0.4, 0.38);
+                hito.Move(rt(50370), rt(51120) + 500, x, 240, 320, 240);
+                hito.Fade(rt(50370), 0.3);
+                hito.Fade(rt(51120), 0);
+                hito.Additive(rt(50370));
+                hito.Scale(rt(50370), rt(51120), 0.4, 0.38);
                 if (i == 1)
                 {
-                    hito.Color(50370, 1 / 3d, 0, 1 / 5d);
+                    hito.Color(rt(50370), 1 / 3d, 0, 1 / 5d);
                 }
                 else if (i == 2)
                 {
-                    hito.Color(50370, 1 / 3d, 1 / 5d, 0);
+                    hito.Color(rt(50370), 1 / 3d, 1 / 5d, 0);
                 }
             }
 
             var circle = layer.CreateSprite(@"SB\components\circle1.png");
-            circle.Scale((OsbEasing)10, 48120, 48402, 0.5, 1);
-            circle.Scale(48402, 48683, 1, 1.05);
-            circle.Fade(48402, 48683, 1, 0);
+            circle.Scale((OsbEasing)10, rt(48120), rt(48402), 0.5, 1);
+            circle.Scale(rt(48402), rt(48683), 1, 1.05);
+            circle.Fade(rt(48402), rt(48683), 1, 0);
 
             var unknownWords = new[] { "真実", "恐怖", "悲し", "境界", "約束", "地獄", "楽園", "悪霊" };
-            var timings = new[] { 48120, 48683, 49245, 49808, 50370, 51120 };
+            var timings = new[] { rt(48120), rt(48683), rt(49245), rt(49808), rt(50370), rt(51120) };
             var scales = new[] { 0.9, 0.72, 0.54, 0.36, 0.18, 0 };
 
             var bg2 = layer.CreateSprite(@"SB\components\bg.jpg");
-            bg2.Fade(49808, 50370, 1, 1);
-            bg2.Scale(49808, 1.5);
-            bg2.Color(49808, 0.2, 0, 0.3);
+            bg2.Fade(rt(49808), rt(50370), 1, 1);
+            bg2.Scale(rt(49808), 1.5);
+            bg2.Color(rt(49808), 0.2, 0, 0.3);
 
             var bg3 = layer.CreateSprite(@"SB\components\bg.jpg");
-            bg3.Fade(49245, 49808, 1, 1);
-            bg3.Scale(49245, 2);
-            bg3.Color(49245, 0.2, 0.2, 0.2);
+            bg3.Fade(rt(49245), rt(49808), 1, 1);
+            bg3.Scale(rt(49245), 2);
+            bg3.Color(rt(49245), 0.2, 0.2, 0.2);
 
             var bgg = layer.CreateSprite(@"SB\components\snow.png");
-            bgg.Fade(48120, 49245, 0.3, 0.3);
-            bgg.Scale((OsbEasing)12, 48120, 48683, 8.5, 0);
+            bgg.Fade(rt(48120), rt(49245), 0.3, 0.3);
+            bgg.Scale((OsbEasing)12, rt(48120), rt(48683), 8.5, 0);
 
             for (int i = 0; i < 160; i++)
             {
@@ -151,32 +156,32 @@ namespace StorybrewScripts
                     }
 
                     var interval = Random(90, 110);
-                    sprite.Color(48120, color, color, color);
-                    sprite.Color(49808, 0, color, 0);
-                    sprite.Color(50370, color / 3d, 0, 0);
-                    sprite.Color(51120, 0, 0, 0);
-                    sprite.Additive(48120);
-                    sprite.StartLoopGroup(48120, 15);
+                    sprite.Color(rt(48120), color, color, color);
+                    sprite.Color(rt(49808), 0, color, 0);
+                    sprite.Color(rt(50370), color / 3d, 0, 0);
+                    sprite.Color(rt(51120), 0, 0, 0);
+                    sprite.Additive(rt(48120));
+                    sprite.StartLoopGroup(rt(48120), 15);
                     sprite.Fade(0, interval, 1, 0.5);
                     sprite.Fade(0, interval, 2 * interval, 0.5, 1);
                     sprite.EndGroup();
 
-                    sprite2.Color(48120, 0, 0, 0);
-                    sprite2.Color(49808, color, 0, 0);
-                    sprite2.Color(50370, color / 3d, color / 5d, 0);
-                    sprite2.Color(51120, 0, 0, 0);
-                    sprite2.Additive(49808);
-                    sprite2.StartLoopGroup(48120, 15);
+                    sprite2.Color(rt(48120), 0, 0, 0);
+                    sprite2.Color(rt(49808), color, 0, 0);
+                    sprite2.Color(rt(50370), color / 3d, color / 5d, 0);
+                    sprite2.Color(rt(51120), 0, 0, 0);
+                    sprite2.Additive(rt(49808));
+                    sprite2.StartLoopGroup(rt(48120), 15);
                     sprite2.Fade(0, interval, 0.5, 0.5);
                     sprite2.Fade(0, interval, 2 * interval, 0.5, 1);
                     sprite2.EndGroup();
 
-                    sprite3.Color(48120, 0, 0, 0);
-                    sprite3.Color(49808, 0, 0, color);
-                    sprite3.Color(50370, color / 3d, 0, color / 5d);
-                    sprite3.Color(51120, 0, 0, 0);
-                    sprite3.Additive(49808);
-                    sprite3.StartLoopGroup(48120, 15);
+                    sprite3.Color(rt(48120), 0, 0, 0);
+                    sprite3.Color(rt(49808), 0, 0, color);
+                    sprite3.Color(rt(50370), color / 3d, 0, color / 5d);
+                    sprite3.Color(rt(51120), 0, 0, 0);
+                    sprite3.Additive(rt(49808));
+                    sprite3.StartLoopGroup(rt(48120), 15);
                     sprite3.Fade(0, interval, 1, 0.5);
                     sprite3.Fade(0, interval, 2 * interval, 0.5, 1);
                     sprite3.EndGroup();
@@ -302,13 +307,13 @@ namespace StorybrewScripts
         {
             var newStart = StartTime + 45308 - 45120 - One2Eight * 0;
             var newEnd = newStart + 45683 - 45308;
-            var ouTransStart = new[] { 45683, 45777, 45870, 45964 };
-            var ouTransEnd = 46245/*46058*/- One2Eight;
+            var ouTransStart = new[] { rt(45683), rt(45777), rt(45870), rt(45964) };
+            var ouTransEnd = rt(46245)/*46058*/- One2Eight;
 
             var bg = layer.CreateSprite(@"SB\components\bg.jpg");
             bg.Fade(StartTime, 0.3);
-            bg.Fade(OsbEasing.Out, 45683, 45964, 0.3, 0.1);
-            bg.Scale(OsbEasing.Out, StartTime, 47370, 0.9, 0.85);
+            bg.Fade(OsbEasing.Out, rt(45683), rt(45964), 0.3, 0.1);
+            bg.Scale(OsbEasing.Out, StartTime, rt(47370), 0.9, 0.85);
 
             var pngName = Enumerable.Range(1, 3);
             var all = pngName.SelectMany(k => new[] { ConvertToFileName("衝", $"_st_{k}S"), ConvertToFileName("衝", $"_{k}S"), }).ToArray();
@@ -383,7 +388,7 @@ namespace StorybrewScripts
             // word1_s.Fade(StartTime + One2Eight * 2, StartTime + One2Eight * 4, 1, 1);
 
             DrawLines(layer, StartTime);
-            DrawLines(layer, 45683, 10, 300);
+            DrawLines(layer, rt(45683), 10, 300);
 
             var allPostFixes = new[] { "_1L", "_2L", "_3L", "_st_1L", "_st_2L", "_st_3L", };
             // 47558
@@ -396,24 +401,24 @@ namespace StorybrewScripts
                 var sprite = layer.CreateSprite(file);
                 var x = Random(-107 + 50, 747 - 50);
                 var y = Random(0, 480);
-                sprite.Move(0, 45214 + i * interval, 45214 + i * interval + 55, x, y, x, y);
-                sprite.Scale(45214 + i * interval, 1 - i * 0.02);
-                sprite.Rotate(45214 + i * interval, -0.3);
+                sprite.Move(0, rt(45214) + i * interval, rt(45214) + i * interval + 55, x, y, x, y);
+                sprite.Scale(rt(45214) + i * interval, 1 - i * 0.02);
+                sprite.Rotate(rt(45214) + i * interval, -0.3);
             }
 
             var chong = ConvertToFileName("衝", "_2L");
             var chongSprite = layer.CreateSprite(chong);
-            chongSprite.Rotate(45214, 45495, -0.3, -0.3);
-            chongSprite.Scale((OsbEasing)10, 45214, 45495, 0.9, 0.5);
+            chongSprite.Rotate(rt(45214), rt(45495), -0.3, -0.3);
+            chongSprite.Scale((OsbEasing)10, rt(45214), rt(45495), 0.9, 0.5);
             var interv = 22;
             int jj = 0;
             for (jj = 0; jj < 6; jj += 2)
             {
-                chongSprite.Fade(45214 + jj * interv, 0);
-                chongSprite.Fade(45214 + (jj + 1) * interv, 1);
+                chongSprite.Fade(rt(45214) + jj * interv, 0);
+                chongSprite.Fade(rt(45214) + (jj + 1) * interv, 1);
             }
 
-            chongSprite.Fade(45214 + jj * interv, 0);
+            chongSprite.Fade(rt(45214) + jj * interv, 0);
 
             DrawLines(layer, StartTime + 46245 - 45120);
             DrawLines(layer, StartTime + 46808 - 45120, 5, 300);
@@ -443,42 +448,42 @@ namespace StorybrewScripts
                 var sprite = layer.CreateSprite(file);
                 var x = Random(-107 + 50, 747 - 50);
                 var y = Random(0, 480);
-                sprite.Move(0, 46245 + i * interval, 46245 + i * interval + 55, x, y, x, y);
-                sprite.Scale(46245 + i * interval, 1 - i * 0.02);
-                sprite.Rotate(46245 + i * interval, 0.3);
+                sprite.Move(0, rt(46245) + i * interval, rt(46245) + i * interval + 55, x, y, x, y);
+                sprite.Scale(rt(46245) + i * interval, 1 - i * 0.02);
+                sprite.Rotate(rt(46245) + i * interval, 0.3);
             }
 
             var tuSt = ConvertToFileName("突", "_st_2L");
             var tuSpriteSt = layer.CreateSprite(tuSt);
-            tuSpriteSt.Fade((OsbEasing)13, 46995, 47370, 0, 0.3);
-            tuSpriteSt.Rotate(46995, 47370, 0.3, 0.3);
-            tuSpriteSt.Scale(46995, 0.9);
-            tuSpriteSt.Color(46995, 0.9, 0, 0);
+            tuSpriteSt.Fade((OsbEasing)13, rt(46995), rt(47370), 0, 0.3);
+            tuSpriteSt.Rotate(rt(46995), rt(47370), 0.3, 0.3);
+            tuSpriteSt.Scale(rt(46995), 0.9);
+            tuSpriteSt.Color(rt(46995), 0.9, 0, 0);
 
             var tu = ConvertToFileName("突", "_2L");
             var tuSprite = layer.CreateSprite(tu);
-            tuSprite.Rotate(46620, 47370, 0.3, 0.3);
-            tuSprite.Scale((OsbEasing)10, 46620, 47370, 0.9, 0.5);
+            tuSprite.Rotate(rt(46620), rt(47370), 0.3, 0.3);
+            tuSprite.Scale((OsbEasing)10, rt(46620), rt(47370), 0.9, 0.5);
             var interv2 = 22;
             for (int i = 0; i < 10; i += 2)
             {
-                tuSprite.Fade(46620 + i * interv2, 0);
-                tuSprite.Fade(46620 + (i + 1) * interv2, 1);
+                tuSprite.Fade(rt(46620) + i * interv2, 0);
+                tuSprite.Fade(rt(46620) + (i + 1) * interv2, 1);
             }
 
             {
                 // var bg2 = layer.CreateSprite(@"SB\components\bg.jpg");
                 // bg2.Fade(47370, 48120, 1, 1);
                 var w2 = layer.CreateSprite(@"SB\components\white.png");
-                w2.Fade(47370, 48120, 1, 1);
-                w2.Color((OsbEasing)6, 47370, 48120, 0.95, 0.95, 0.95, 0.3, 0.05, 0.05);
+                w2.Fade(rt(47370), rt(48120), 1, 1);
+                w2.Color((OsbEasing)6, rt(47370), rt(48120), 0.95, 0.95, 0.95, 0.3, 0.05, 0.05);
 
                 var hito = layer.CreateSprite(@"SB\cg\waifu_red_w.png");
-                hito.MoveY((OsbEasing)7, 47370, 48320, 50, 490);
-                hito.Color(47370, 48320, 0.7, 0.7, 0.7, 0.4, 0.05, 0.05);
-                hito.Scale((OsbEasing)2, 47370, 48320, 0.7, 0.9);
-                hito.MoveX(47370, 48320, 320, 270);
-                hito.Fade((OsbEasing)2, 48120, 48320, 0.3, 0);
+                hito.MoveY((OsbEasing)7, rt(47370), rt(48320), 50, 490);
+                hito.Color(rt(47370), rt(48320), 0.7, 0.7, 0.7, 0.4, 0.05, 0.05);
+                hito.Scale((OsbEasing)2, rt(47370), rt(48320), 0.7, 0.9);
+                hito.MoveX(rt(47370), rt(48320), 320, 270);
+                hito.Fade((OsbEasing)2, rt(48120), rt(48320), 0.3, 0);
 
                 var interval = 22;
                 //衝突破滅
@@ -492,12 +497,12 @@ namespace StorybrewScripts
                     var x = 320 + 5;
                     var y = height * (i / (double)(sentence.Length - 1)) + 235 - height / 2d;
                     var sprite = layer.CreateSprite(fn);
-                    var start = 47370 + i * 99;
-                    sprite.MoveX((OsbEasing)1, 47370, 48120, x, x - 10);
-                    sprite.MoveY((OsbEasing)13, 47370, 48120, y, y + 10);
+                    var start = rt(47370) + i * 99;
+                    sprite.MoveX((OsbEasing)1, rt(47370), rt(48120), x, x - 10);
+                    sprite.MoveY((OsbEasing)13, rt(47370), rt(48120), y, y + 10);
                     sprite.Scale(start, 0.7);
-                    if (start != 47370)
-                        sprite.Fade(47370, 0);
+                    if (start != rt(47370))
+                        sprite.Fade(rt(47370), 0);
                     sprite.Fade(start, 0.25);
                     sprite.Color(start, 0.9, 0, 0);
                 }
@@ -508,34 +513,34 @@ namespace StorybrewScripts
                     var fn = ConvertToFileName(c.ToString(), "_1S");
                     var y = height * (i / (double)(sentence.Length - 1)) + 240 - height / 2d;
                     var sprite = layer.CreateSprite(fn);
-                    var start = 47370 + i * 99;
+                    var start = rt(47370) + i * 99;
                     // sprite.Scale(start, 0.7);
                     // sprite.Color(start, 0.9, 0.9, 0.9);
-                    sprite.Color((OsbEasing)7, 47370, 48120, 0.05, 0.05, 0.05, 0.5, 0.05, 0.05);
-                    sprite.Fade(47370, 1);
-                    sprite.Fade(48120, 0);
+                    sprite.Color((OsbEasing)7, rt(47370), rt(48120), 0.05, 0.05, 0.05, 0.5, 0.05, 0.05);
+                    sprite.Fade(rt(47370), 1);
+                    sprite.Fade(rt(48120), 0);
                     for (int j = 0; j < 40; j++)
                     {
                         sprite.MoveY(start + j * Random(16, 25), y + Random(-1, 1));
                         sprite.MoveX(start + j * Random(16, 25), 320 + Random(-1, 1));
                     }
-                    sprite.Scale(48120, 0.7);
+                    sprite.Scale(rt(48120), 0.7);
                 }
 
                 var w = layer.CreateSprite(@"sb\components\white.png", OsbOrigin.BottomCentre);
-                w.ScaleVec((OsbEasing)9, 47370 + 200, 48120 - 100, 0.1, 0.2, 0.1, 0);
-                w.MoveY((OsbEasing)13, 47370, 48120, 180, 390);
-                w.Fade(47370, 1);
-                w.Color((OsbEasing)7, 47370, 48120, 0.05, 0.05, 0.05, 0.5, 0.05, 0.05);
+                w.ScaleVec((OsbEasing)9, rt(47370) + 200, rt(48120) - 100, 0.1, 0.2, 0.1, 0);
+                w.MoveY((OsbEasing)13, rt(47370), rt(48120), 180, 390);
+                w.Fade(rt(47370), 1);
+                w.Color((OsbEasing)7, rt(47370), rt(48120), 0.05, 0.05, 0.05, 0.5, 0.05, 0.05);
                 for (int i = 0; i < 30; i++)
                 {
-                    w.MoveX(47370 + i * Random(16, 25), 320 + Random(-1, 1));
+                    w.MoveX(rt(47370) + i * Random(16, 25), 320 + Random(-1, 1));
                 }
 
                 for (int i = 0; i < 12; i += 2)
                 {
-                    w.Fade(47370 + 100 + i * interval, 0);
-                    w.Fade(47370 + 100 + (i + 1) * interval, 1);
+                    w.Fade(rt(47370) + 100 + i * interval, 0);
+                    w.Fade(rt(47370) + 100 + (i + 1) * interval, 1);
                 }
 
                 DrawLines2(layer, StartTime + 47370 - 45120, 30, true);
@@ -545,7 +550,7 @@ namespace StorybrewScripts
                 waku.ScaleVec(StartTime, 2.652173913043478 * 1.02, 1.983471074380165 * 1.02);
                 for (int i = 0; i < 30; i++)
                 {
-                    waku.Move(47370 + i * Random(16, 25), 320 + Random(-2, 2), 240 + Random(-2, 2));
+                    waku.Move(rt(47370) + i * Random(16, 25), 320 + Random(-2, 2), 240 + Random(-2, 2));
                 }
             }
         }
@@ -565,7 +570,7 @@ namespace StorybrewScripts
             }
         }
 
-        private void DrawLines(StoryboardLayer layer, int startTime, int count = 3, int randomStart = 100)
+        private void DrawLines(StoryboardLayer layer, double startTime, int count = 3, int randomStart = 100)
         {
             for (int i = 0; i < count; i++)
             {
@@ -603,23 +608,23 @@ namespace StorybrewScripts
             word2_s.Fade(startTime + One2Eight * 4, 0);
         }
 
+        private static string StringToUnicode(string srcText)
+        {
+            string dst = "";
+            char[] src = srcText.ToCharArray();
+            for (int i = 0; i < src.Length; i++)
+            {
+                byte[] bytes = Encoding.Unicode.GetBytes(src[i].ToString());
+                string str = @"" + bytes[1].ToString("X2") + bytes[0].ToString("X2");
+                dst += str;
+            }
+            return dst;
+        }
+
         private static string ConvertToFileName(string name, string postFix)
         {
-            var fileName =
-                Convert.ToBase64String(Encoding.UTF8.GetBytes(name))
-                    .Replace("\\", "$a$")
-                    .Replace("/", "$b$")
-                    .Replace(":", "$c$")
-                    .Replace("*", "$d$")
-                    .Replace("?", "$e$")
-                    .Replace("\"", "$f$")
-                    .Replace("<", "$g$")
-                    .Replace(">", "$h$")
-                    .Replace("|", "$i$")
-                    .Replace(",", "$1$")
-                    .Replace("'", "$2$")
-                + postFix + ".png";
-            return @"SB\output\" + fileName;
+            var fileName = @"SB\output\" + StringToUnicode(name) + postFix + ".png";
+            return fileName;
         }
     }
 }

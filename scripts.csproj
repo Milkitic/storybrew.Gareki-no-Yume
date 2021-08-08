@@ -60,13 +60,16 @@
     <Compile Include="FullKiraBg.cs" />
     <Compile Include="JingwuEffect.cs" />
     <Compile Include="JingwuPreEffect.cs" />
+    <Compile Include="KiaiFake.cs" />
     <Compile Include="KiaiTexts.cs" />
     <Compile Include="KiaiWaifu.cs" />
     <Compile Include="KiaiWaifu2.cs" />
     <Compile Include="Lyric3.cs" />
     <Compile Include="MainSong.cs" />
+    <Compile Include="MainSong2.cs" />
     <Compile Include="Opening.cs" />
     <Compile Include="OpeningBG.cs" />
+    <Compile Include="Solo.cs" />
     <Compile Include="tools/FontGenerator/Annotations.cs" />
     <Compile Include="tools/FontGenerator/App.xaml.cs" />
     <Compile Include="tools/FontGenerator/AssemblyInfo.cs" />
@@ -84,6 +87,26 @@
     <Compile Include="tools/FontGenerator/obj/Debug/net5.0-windows/MainWindow.g.i.cs" />
     <Compile Include="tools/FontGenerator/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
     <Compile Include="tools/FontGenerator/obj/Debug/netcoreapp3.1/FontGenerator.AssemblyInfo.cs" />
+    <Compile Include="tools/FontGeneratorEng/Annotations.cs" />
+    <Compile Include="tools/FontGeneratorEng/App.xaml.cs" />
+    <Compile Include="tools/FontGeneratorEng/AssemblyInfo.cs" />
+    <Compile Include="tools/FontGeneratorEng/MainWindow.xaml.cs" />
+    <Compile Include="tools/FontGeneratorEng/OutlinedTextBlock.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0/FontGenerator.AssemblyInfo.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/App.g.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/App.g.i.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/FontGenerator.AssemblyInfo.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/GeneratedInternalTypeHelper.g.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/GeneratedInternalTypeHelper.g.i.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/MainWindow.g.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/MainWindow.g.i.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Include="tools/FontGeneratorEng/obj/Debug/netcoreapp3.1/FontGenerator.AssemblyInfo.cs" />
+    <Compile Include="tools/itai/itai/Program.cs" />
+    <Compile Include="tools/itai/itai/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+    <Compile Include="tools/itai/itai/obj/Debug/net5.0/itai.AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
 </Project>
