@@ -33,7 +33,7 @@
                         <DataTemplate>
                             <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontL}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
                                 <TextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
@@ -53,7 +53,7 @@
                         <DataTemplate>
                             <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontL}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
                                 <local:OutlinedTextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
@@ -76,7 +76,7 @@
                         <DataTemplate>
                             <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontL}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
                                 <TextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
@@ -96,7 +96,7 @@
                         <DataTemplate>
                             <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontL}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
                                 <local:OutlinedTextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
@@ -119,7 +119,7 @@
                         <DataTemplate>
                             <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontL}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#onryou">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#onryou">
                                 <TextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
@@ -139,7 +139,7 @@
                         <DataTemplate>
                             <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontL}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#onryou">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#onryou">
                                 <local:OutlinedTextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
@@ -169,7 +169,7 @@
                     <DataTemplate>
                         <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontS}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
                             <TextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
@@ -189,7 +189,7 @@
                     <DataTemplate>
                         <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontS}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#07ReallyScaryMinchotai">
                             <local:OutlinedTextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
@@ -212,7 +212,7 @@
                     <DataTemplate>
                         <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontS}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
                             <TextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
@@ -232,7 +232,7 @@
                     <DataTemplate>
                         <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontS}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#NemukeMedium">
                             <local:OutlinedTextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
@@ -255,7 +255,7 @@
                     <DataTemplate>
                         <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontS}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#onryou">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#onryou">
                             <TextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
@@ -275,7 +275,7 @@
                     <DataTemplate>
                         <Grid Tag="{Binding}"
                                   TextBlock.FontSize="{StaticResource intFontS}"
-                                  TextBlock.FontFamily="pack://application:,,,/FontGenerator;component/Fonts/#onryou">
+                                  TextBlock.FontFamily="Baskerville Old Face,pack://application:,,,/FontGenerator;component/Fonts/#onryou">
                             <local:OutlinedTextBlock
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"

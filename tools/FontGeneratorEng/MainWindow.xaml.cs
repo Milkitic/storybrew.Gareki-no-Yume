@@ -55,7 +55,7 @@ namespace FontGenerator
 
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
-            var allText = "0123456789.,./_-qwertyuiopasdfghjklzxcvbnm·" +
+            var allText = "0123456789:.,./_-qwertyuiopasdfghjklzxcvbnm·" +
                           "qwertyuiopasdfghjklzxcvbnm".ToUpper() +
                           "幽閉サテライト - 明日散る運命なら" +
                           "サクラノモリ†ドリーマーズ" +
@@ -99,7 +99,7 @@ namespace FontGenerator
         private void SaveVisualTreeImages(ItemsControl itemsControl, string postFix = "")
         {
             var grids = FindVisualChildren<Grid>(itemsControl).ToArray();
-            var targetFolder = Path.Combine(BaseFolder, "output_common");
+            var targetFolder = Path.Combine(BaseFolder, "output");
             if (!Directory.Exists(targetFolder))
                 Directory.CreateDirectory(targetFolder);
             foreach (var grid in grids)

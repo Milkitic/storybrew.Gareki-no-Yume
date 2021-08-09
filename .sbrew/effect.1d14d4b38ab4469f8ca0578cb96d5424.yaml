@@ -1,31 +1,31 @@
 ﻿FormatVersion: 7
-Name: "Lyric3 2"
+Name: "Lyric3 4"
 Script: "Lyric3"
 Config:
   StartTime:
     Type: "System.Int32"
-    Value: "103621"
+    Value: "109621"
   After:
     Type: "System.Boolean"
-    Value: "False"
+    Value: "True"
   Sentence1:
     Type: "System.String"
-    Value: "幻想絆"
+    Value: "打ち砕かれし"
   SecondIndex:
     Type: "System.Int32"
-    Value: "1"
+    Value: "2"
   Sentence1Scale:
     Type: "System.Double"
-    Value: "0.7"
+    Value: "0.5"
   Sentence2:
     Type: "System.String"
-    Value: "愚かなる"
+    Value: "夢が舞う "
   RandomSeed:
     Type: "System.Int32"
     Value: "0"
     DisplayName: "Random seed"
 Layers:
-  96b9ab671acb428aadc1e0029e7d9495:
+  af0ee913737740dea417cdbd4281736c:
     Name: "lyric"
     OsbLayer: Background
     DiffSpecific: No

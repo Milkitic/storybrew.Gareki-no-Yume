@@ -16,15 +16,30 @@ namespace StorybrewScripts
 {
     public class KiaiTexts : StoryboardObjectGenerator
     {
-        int StartTime = 58620;
+        [Configurable]
+        public int StartTime = 58620;
+        [Configurable]
+        public bool Short = false;
+
+        bool IsMid => StartTime == 117121;
+
+        private double rt(double time)
+        {
+            return StartTime + (time - 58620);
+        }
+
         public override void Generate()
         {
             var layer = GetLayer("text");
-            Generate1(layer);
-            Generate2(layer);
-            Generate3(layer);
-            Generate5(layer);
-            Generate4(layer);
+            if (!Short)
+            {
+                Generate1(layer);
+                Generate2(layer);
+                Generate3(layer);
+                Generate5(layer);
+                Generate4(layer);
+            }
+
             Generate6(layer);
             Generate7(layer);
             Generate8(layer);
@@ -49,8 +64,8 @@ namespace StorybrewScripts
                 var ratio = i / (double)count;
                 var o = layer.CreateAnimation(@"SB\components\ink\ink.png", 18, Random(16, 32), OsbLoopType.LoopOnce);
                 var interval = 18;
-                var start = 79621 + 1700 + (count - 1 * interval) - i * interval;
-                o.Move(start, 80933, x, y, x, y);
+                var start = rt(79621) + 1700 + (count - 1 * interval) - i * interval;
+                o.Move(start, rt(80933), x, y, x, y);
                 o.Scale(start, 0.2 * ((r / 250d) + 1));
                 o.Color(start, 0.5, 0, 0.1);
                 // o.Fade(start, 0.2);
@@ -70,7 +85,7 @@ namespace StorybrewScripts
                 var ratio = i / (double)count;
                 var o = layer.CreateSprite(@"SB\components\ink\ink17.png");
                 var interval = 3 + i / 20;
-                var start = 80933 + i * interval;
+                var start = rt(80933) + i * interval;
                 // o.Move(80933, 82339, x, y, x, y);
                 var less = 10;
                 var s = 0.2 * ((r / 250d) + 1);
@@ -79,14 +94,14 @@ namespace StorybrewScripts
                 o.Rotate((OsbEasing)2, start, start + 200 + i * less, Random(Math.PI * 2), Random(Math.PI * 2));
                 o.Move((OsbEasing)2, start, start + 200 + i * less, x, y, x2, y2);
                 // o.Color(80933, 82339, 0.3, 0, 0.02, 0.3, 0, 0.02);
-                o.Fade(80933, 1);
-                o.Fade(82339, 0);
+                o.Fade(rt(80933), 1);
+                o.Fade(rt(82339), 0);
                 // o.Fade(start, 0.2);
             }
 
             var w = layer.CreateSprite(@"SB\components\white.png");
-            w.Fade(80746, 80933, 0, 1);
-            w.Color(80746, 1, 0.5, 0.6);
+            w.Fade(rt(80746), rt(80933), 0, 1);
+            w.Color(rt(80746), 1, 0.5, 0.6);
         }
 
         private void Generate11(StoryboardLayer layer)
@@ -94,7 +109,7 @@ namespace StorybrewScripts
             var start = StartTime + (80933 - 58620);
             var end = StartTime + (82339 - 58620);
             var postFix = "_1L";
-            var sentence = "捧げようか";
+            var sentence = IsMid ? "叶えようか" : "捧げようか";
             var width = 340;
             for (var i = 0; i < sentence.Length; i++)
             {
@@ -115,8 +130,8 @@ namespace StorybrewScripts
             var start = StartTime + (79058 - 58620);
             var end = StartTime + (80933 - 58620);
             var postFix = "_1S";
-            var sentence = "恐怖を";
-            var height = 120;
+            var sentence = IsMid ? "約束" : "恐怖を";
+            var height = IsMid ? 60 : 120;
             for (var i = 0; i < sentence.Length; i++)
             {
                 var c = sentence[i];
@@ -146,10 +161,10 @@ namespace StorybrewScripts
         {
             var start = StartTime + (76058 - 58620);
             var postFix = "_2S";
-            var sentence = "迷子の欠片飢えた";
-            var width = 300;
-            var targetWidthPre = 450;
-            var targetWidth = 500;
+            var sentence = IsMid ? "あの日の記憶秘めた" : "迷子の欠片飢えた";
+            var width = IsMid ? 320 : 300;
+            var targetWidthPre = IsMid ? 415 : 450;
+            var targetWidth = IsMid ? 520 : 500;
             for (var i = 0; i < sentence.Length; i++)
             {
                 var deg = ((i / (sentence.Length - 1d)) - 0.5) * 2 * 45 - 90;
@@ -188,9 +203,9 @@ namespace StorybrewScripts
         {
             var start = StartTime + (73621 - 58620);
             // var end = StartTime + (71839 - 58620);
-            var sentence = "吹き荒れる魂";
+            var sentence = IsMid ? "降リ積もる後悔" : "吹き荒れる魂";
             var postFix = "_3S";
-            var width = 280;
+            var width = IsMid ? 290 : 280;
             for (var i = 0; i < sentence.Length; i++)
             {
                 var c = sentence[i];
@@ -220,9 +235,9 @@ namespace StorybrewScripts
         {
             var start = StartTime + (72308 - 58620);
             // var end = StartTime + (71839 - 58620);
-            var sentence = "感情の奥底";
+            var sentence = IsMid ? "ざわめきの先で" : "感情の奥底";
             var postFix = "_3S";
-            var width = 210;
+            var width = IsMid ? 260 : 210;
             for (var i = 0; i < sentence.Length; i++)
             {
                 var c = sentence[i];
@@ -269,9 +284,17 @@ namespace StorybrewScripts
         {
             var start = StartTime + (70621 - 58620);
             var end = StartTime + (71839 - 58620);
-            var sentence = "空っぽの";
+            if (IsMid)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    Random(0);
+                }
+            }
+
+            var sentence = IsMid ? "蠢いた" : "空っぽの";
             var postFix = "_2S";
-            var width = 260;
+            var width = IsMid ? 180 : 260;
             for (var i = 0; i < sentence.Length; i++)
             {
                 var c = sentence[i];
@@ -298,9 +321,9 @@ namespace StorybrewScripts
         {
             var start = StartTime + (66871 - 58620);
             var end = StartTime + (69121 - 58620);
-            var sentence = "真実";
+            var sentence = IsMid ? "置き去りの愚者" : "真実";
             var postFix = "_1S";
-            var height = 60;
+            var height = IsMid ? 230 : 60;
             for (var i = 0; i < sentence.Length; i++)
             {
                 var c = sentence[i];
@@ -313,7 +336,7 @@ namespace StorybrewScripts
                 sprite.Fade(end, 0);
                 // sprite.Fade((OsbEasing)7, enterTime, enterTime + 700, 0, 1);
                 sprite.MoveY(start, y);
-                sprite.Scale(start, 0.7);
+                sprite.Scale(start, IsMid ? 0.5 : 0.7);
                 for (int j = 0; j < 135; j++)
                 {
                     sprite.MoveX(StartTime + (66871 - 58620) + j * 16.6667, 320 + Random(j) / 30);
@@ -326,11 +349,11 @@ namespace StorybrewScripts
         private void Generate4(StoryboardLayer layer)
         {
             var start = StartTime + (64621 - 58620);
-            var sentence = "悪霊に魅入られた";
+            var sentence = IsMid ? "瓦礫に積もる" : "悪霊に魅入られた";
             var postFix = "_2S";
-            var height = 300;
-            var targetHeightPre = 240;
-            var targetHeight = 210;
+            var height = IsMid ? 220 : 300;
+            var targetHeightPre = IsMid ? 170 : 240;
+            var targetHeight = IsMid ? 150 : 210;
             for (var i = 0; i < sentence.Length; i++)
             {
                 var c = sentence[i];
@@ -373,9 +396,9 @@ namespace StorybrewScripts
         {
             //63402
             var start = StartTime + (63074 - 58620);
-            var sentence = "悲しみ";
+            var sentence = IsMid ? "境界" : "悲しみ";
             var postFix = "_3S";
-            var width = 170;
+            var width = IsMid ? 130 : 170;
             for (var i = 0; i < sentence.Length; i++)
             {
                 var c = sentence[i];
@@ -403,9 +426,9 @@ namespace StorybrewScripts
         private void Generate2(StoryboardLayer layer)
         {
             var start = StartTime + (61620 - 58620);
-            var sentence = "駆け抜ける";
+            var sentence = IsMid ? "崩れゆく" : "駆け抜ける";
             var postFix = "_3S";
-            var width = 300;
+            var width = IsMid ? 250 : 300;
 
             for (var i = 0; i < sentence.Length; i++)
             {
@@ -484,8 +507,8 @@ namespace StorybrewScripts
         {
             var start = StartTime + (58808 - 58620);
             var postFix = "_2S";
-            var sentence = "撃ち抜いた身体の奥底";
-            var width = 350;
+            var sentence = IsMid ? "眼差しに呼応する歪" : "撃ち抜いた身体の奥底";
+            var width = IsMid ? 300 : 350;
             var targetWidthPre = 500;
             var targetWidth = 550;
             for (var i = 0; i < sentence.Length; i++)

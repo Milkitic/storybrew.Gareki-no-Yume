@@ -535,7 +535,7 @@ namespace StorybrewScripts
             end = 160902;
             postFix = "_1S";
             sentence = "what";
-            width = 60;
+            width = 70;
             for (var i = 0; i < sentence.Length; i++)
             {
                 var c = sentence[i];

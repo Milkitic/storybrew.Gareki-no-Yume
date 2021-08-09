@@ -88,9 +88,27 @@ namespace StorybrewScripts
             Lyric2(layer);
             DrawNmslEffect(layer);
 
+            WtfText(layer, "目", 36120);
+            WtfText(layer, "で", 37620, true);
+            WtfText(layer, "す", 42120);
+            WtfText(layer, "の", 43620, true);
+
             var waku = layer.CreateSprite(@"SB\components\waku.png");
             waku.Fade(StartTime + 45120 - 33120, 1);
             waku.ScaleVec(StartTime, 2.652173913043478, 1.983471074380165);
+        }
+
+        private static void WtfText(StoryboardLayer layer, string name, int startTime, bool isRed = false)
+        {
+            var text = layer.CreateSprite(ConvertToFileName(name, "_st_2L"));
+            text.Fade((OsbEasing)14, startTime, startTime + 1125, 1, 0);
+            text.Scale(startTime, 0.6);
+            if (isRed) text.Color(startTime, 0.8, 0.1, 0.1);
+            // must.Color(36120, 0, 0, 0);
+            var stroke = layer.CreateSprite(ConvertToFileName(name, "_2L"));
+            stroke.Fade((OsbEasing)14, startTime, startTime + 1125, 1, 0);
+            stroke.Scale(startTime, 0.5);
+            if (isRed) stroke.Color(startTime, 0.8, 0.1, 0.1);
         }
 
         private void Lyric1(StoryboardLayer layer)

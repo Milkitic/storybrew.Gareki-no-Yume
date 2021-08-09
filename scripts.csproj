@@ -70,6 +70,7 @@
     <Compile Include="Opening.cs" />
     <Compile Include="OpeningBG.cs" />
     <Compile Include="Solo.cs" />
+    <Compile Include="Title.cs" />
     <Compile Include="tools/FontGenerator/Annotations.cs" />
     <Compile Include="tools/FontGenerator/App.xaml.cs" />
     <Compile Include="tools/FontGenerator/AssemblyInfo.cs" />

@@ -12,17 +12,11 @@ using System.Linq;
 
 namespace StorybrewScripts
 {
-    public class OpeningBG : StoryboardObjectGenerator
+    public class Title : StoryboardObjectGenerator
     {
         public override void Generate()
         {
-            var layer = GetLayer("main");
-
-            var bg = layer.CreateSprite(@"SB/components/bg.jpg");
-            bg.Fade(0, 0, 18121, 0.5, 0.5);
-            bg.Color(0, 1, 0, 0);
-            bg.ScaleVec(0, 0.9, 0.6);
-
+            var group = base.GetLayer("Back");
         }
     }
 }

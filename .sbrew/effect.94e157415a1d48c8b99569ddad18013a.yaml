@@ -5,6 +5,21 @@ Config:
   StartTime:
     Type: "System.Int32"
     Value: "45120"
+  After:
+    Type: "System.Boolean"
+    Value: "False"
+  Sentence1:
+    Type: "System.String"
+    Value: "衝突破滅"
+  SecondIndex:
+    Type: "System.Int32"
+    Value: "1"
+  Sentence1Scale:
+    Type: "System.Double"
+    Value: "0.7"
+  Sentence2:
+    Type: "System.String"
+    Value: "憐れなる"
   RandomSeed:
     Type: "System.Int32"
     Value: "123"

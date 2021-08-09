@@ -23,10 +23,10 @@ namespace StorybrewScripts
             var bg = layer.CreateSprite(@"SB\cg\0800_n_1180.jpg");
             bg.Color(174121, 1, 0.3, 0);
             bg.Fade(174121, 0.9);
-            bg.Scale(174121, 179933, 1.5, 1);
-            bg.Move(174121, 179933, 380, 540, 360, 380);
+            bg.Scale(174121, 179933, 1.5, 1.3);
+            bg.Move(174121, 179933, 380, 540, 360, 440);
             bg.Scale(179933, 1.7);
-            bg.Move(179933, 184621, 260, 590, 110, 590);
+            bg.Move(179933, 184621, 260, 590, 180, 590);
             var particleCount = 20;
             var lyric = @"
             傷ついた目で
