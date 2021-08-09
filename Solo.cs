@@ -20,8 +20,10 @@ namespace StorybrewScripts
         {
             var layer = GetLayer("waifu");
             var bg = layer.CreateSprite(@"SB\components\bg_solo.jpg");
-            bg.Fade(0, 147121, 173746, 1, 1);
+            bg.Fade(0, 147121, 174121, 1, 1);
             bg.Scale(147121, 0.4447916666666667);
+            bg.Color(147121, 1, 0.5, 0.8);
+            bg.Color(159121, 1, 1, 1);
 
             Preshow(layer);
             TextShow1(layer);
@@ -837,6 +839,8 @@ namespace StorybrewScripts
                 const int interval = 88;
                 var sprite = layer.CreateSprite(pic);
                 sprite.MoveX((OsbEasing)0, start, end, x, x);
+                sprite.Color(start, 0.2, 0.4, 0.6);
+                sprite.Fade(start, 0.8);
                 sprite.MoveY((OsbEasing)0, start, end, y, y);
                 sprite.Scale(start + i * interval, start + i * interval + 200, 0, 0.4);
                 sprite.Scale((OsbEasing)13, start + i * interval + 200, start + i * interval + 1820, 0.4, 0.65);

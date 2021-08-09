@@ -1,0 +1,17 @@
+﻿FormatVersion: 7
+Name: "TitleFinshBreak 2"
+Script: "TitleFinshBreak"
+Config:
+  StartTime:
+    Type: "System.Int32"
+    Value: "141121"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  2d1830086f754a5792c893ff4fe5927f:
+    Name: "main"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes

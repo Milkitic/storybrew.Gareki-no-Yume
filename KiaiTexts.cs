@@ -46,6 +46,7 @@ namespace StorybrewScripts
             Generate9(layer);
             Generate10(layer);
             Generate11(layer);
+            Kira(layer);
             GenerateBlood(layer);
         }
 
@@ -95,7 +96,7 @@ namespace StorybrewScripts
                 o.Move((OsbEasing)2, start, start + 200 + i * less, x, y, x2, y2);
                 // o.Color(80933, 82339, 0.3, 0, 0.02, 0.3, 0, 0.02);
                 o.Fade(rt(80933), 1);
-                o.Fade(rt(82339), 0);
+                o.Fade(rt(82621), 0);
                 // o.Fade(start, 0.2);
             }
 
@@ -107,7 +108,7 @@ namespace StorybrewScripts
         private void Generate11(StoryboardLayer layer)
         {
             var start = StartTime + (80933 - 58620);
-            var end = StartTime + (82339 - 58620);
+            var end = StartTime + (82621 - 58620);
             var postFix = "_1L";
             var sentence = IsMid ? "叶えようか" : "捧げようか";
             var width = 340;
@@ -528,6 +529,34 @@ namespace StorybrewScripts
                 // sprite.Fade(start, 1);
                 sprite.Scale(StartTime + (61620 - 58620), 0.5);
             }
+        }
+
+        private void Kira(StoryboardLayer layer)
+        {
+            if(Short) return;
+            var filterG = layer.CreateSprite(@"SB\components\filter.jpg");
+            filterG.Additive(rt(60120));
+            filterG.Scale(rt(60120), 2);
+            filterG.Fade((OsbEasing)1, rt(60120), rt(60120) + 500, 0, 0.3);
+            filterG.Fade((OsbEasing)2, rt(60120) + 500, rt(60120) + 1000, 0.3, 0);
+            filterG.MoveY(rt(60120), rt(60120) + 1000, 240, 240 - 100);
+            filterG.Rotate(rt(60120), rt(60120) + 1000, 0, -3);
+
+            var filter = layer.CreateSprite(@"SB\components\filter.jpg");
+            filter.MoveX(rt(61620), rt(62745), 320 + 200, 320);
+            filter.MoveX((OsbEasing)2, rt(62745), rt(63027), 320, 220 - 100);
+            filter.MoveX((OsbEasing)1, rt(63027), rt(63308), 220 - 100, -100);
+            filter.MoveY(rt(61620), rt(63027), 110, 240 + 200);
+            filter.Scale(rt(61620), rt(63027), 1.2, 1.5);
+            filter.MoveY(rt(63027), rt(63308), 240 + 200, 110);
+            filter.Scale(rt(63027), rt(63308), 1.5, 1.7);
+            filter.Additive(rt(61620));
+            filter.Fade(rt(61620), rt(61620) + 1000, 0, 0.15);
+            filter.Fade((OsbEasing)2, rt(63308), rt(64058), 0.15, 0);
+
+            // var bg = layer.CreateSprite(@"SB\components\white.png");
+            // bg.Fade(0, startTime + 26993 - 26558, startTime + 27121 - 26558, 0, 1);
+            // bg.Fade((OsbEasing)(faster ? 13 : 1), startTime + 27121 - 26558, startTime + 28621 - 26558, 1, 0);
         }
 
         private static string StringToUnicode(string srcText)

@@ -35,13 +35,13 @@ namespace StorybrewScripts
             var bg = layer.CreateSprite(@"SB\cg\0803_n_1187.jpg", OsbOrigin.Centre, new Vector2(380, 280));
             bg.Scale(nextbStartTime + 4900, 0.6);
             bg.Color(nextbStartTime + 4900, 0.2, 0.2, 0.2);
-            bg.Fade((OsbEasing)0, nextbStartTime + 4900, nextbStartTime + 6300, 1, 1);
+            bg.Fade((OsbEasing)0, nextbStartTime + 4900, rt(82808), 1, 1);
 
 
             var wf = layer.CreateSprite(@"SB\cg\waifu_red.png", OsbOrigin.Centre, new Vector2(380, 280));
             wf.Scale(nextbStartTime + 4900, 0.6);
-            wf.Color(nextbStartTime + 4900, 0.2, 0.2, 0.2);
-            wf.Fade((OsbEasing)0, nextbStartTime + 4900, nextbStartTime + 6300, 1, 1);
+            wf.Color(nextbStartTime + 4900, 0.3, 0.2, 0.2);
+            wf.Fade((OsbEasing)0, nextbStartTime + 4900, rt(82808), 1, 1);
         }
 
         private void Waifu70621_71933(StoryboardLayer layer, int nextStartTime)

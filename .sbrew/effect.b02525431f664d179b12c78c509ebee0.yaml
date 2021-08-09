@@ -1,0 +1,20 @@
+﻿FormatVersion: 7
+Name: "DirtyFilterEffect 12"
+Script: "DirtyFilterEffect"
+Config:
+  StartTime:
+    Type: "System.Int32"
+    Value: "87121"
+  EndTime:
+    Type: "System.Int32"
+    Value: "88621"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  8efeecfc018549a5938050cb29c114c6:
+    Name: "filter"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
