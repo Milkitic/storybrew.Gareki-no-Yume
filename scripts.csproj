@@ -9,7 +9,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Output|AnyCPU' ">
     <Optimize>true</Optimize>
-    <IntermediateOutputPath>..\..\cache\obj</IntermediateOutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <BaseOutputPath>..\..\cache\bin</BaseOutputPath>
     <BaseIntermediateOutputPath>..\..\cache\obj\</BaseIntermediateOutputPath>
@@ -55,8 +54,6 @@
     <Compile Include="Title.cs" />
     <Compile Include="TitleFinshBreak.cs" />
     <Compile Include="ZhuanChang.cs" />
-    <Compile Include="obj/Debug/net452/.NETFramework,Version=v4.5.2.AssemblyAttributes.cs" />
-    <Compile Include="obj/Debug/net452/scripts.AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
 </Project>
