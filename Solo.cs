@@ -40,7 +40,7 @@ namespace StorybrewScripts
             TextShowEnter(layer, 169011, 170886, "Source Game", 250, "サクラノモリ†ドリーマーズ", 330);
             TextShowEnter(layer, 170886, 171636, "Lyric", 80, "華憐", 35, true);
             TextShowEnter(layer, 171636, 172386, "Compose", 150, "電気", 35, true);
-            TextShowEnter(layer, 172386, 173136, "Beatmap", 150, "Dored", 80, true, "_1S");
+            //TextShowEnter(layer, 172386, 173136, "Beatmap", 150, "Dored", 80, true, "_1S");
             TextShowEnter(layer, 173136, 174121, "Storyboard", 200, "yf_bmp", 90, false, "_1S");
         }
 

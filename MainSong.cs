@@ -29,12 +29,25 @@ namespace StorybrewScripts
             var x = 160;
             saku.Move(StartTime, StartTime + 35745 - 33120, x, y, x, y - 150);
             saku.Move(StartTime + 39120 - 33120, StartTime + 41745 - 33120, x, y - 400, x, y - 550);
+            var randX1 = Random(-50, 50);
+            var randY1 = Random(-50, 50);
+            saku.Move(0, StartTime + 35745 - 33120, StartTime + 39120 - 33120,
+                x + randX1, y - 150 + randY1, x + randX1, y - 150 + randY1);
             HideItem(saku);
             var saku2 = layer.CreateSprite(@"SB\cg\saku.jpg");
             var y2 = 640;
             var x2 = 460;
             saku2.Move(StartTime, StartTime + 35745 - 33120, x2, y2, x2, y2 - 150);
             saku2.Move(StartTime + 39120 - 33120, StartTime + 41745 - 33120, x2, y2 - 400, x2, y2 - 550);
+            randX1 = Random(-50, 50);
+            randY1 = Random(-50, 50);
+            saku2.Move(0, StartTime + 35745 - 33120, StartTime + 39120 - 33120,
+               x2 + randX1, y2 - 150 + randY1, x2 + randX1, y2 - 150 + randY1);
+            randX1 = Random(-50, 50);
+            randY1 = Random(-50, 50);
+            saku2.Move(0, StartTime + 41745 - 33120, StartTime + 42120 - 33120,
+                x2 + randX1, y2 - 550 + randY1, x2 + randX1, y2 - 550 + randY1);
+
             HideItem(saku2);
             var note1 = layer.CreateSprite(@"SB\cg\0778_n_10601.jpg");
             var note2 = layer.CreateSprite(@"SB\cg\0779_n_10602.jpg");
@@ -60,9 +73,17 @@ namespace StorybrewScripts
                 var startY = 240 + 120 + i * 400;
 
                 item.Move(0, StartTime, StartTime + 35745 - 33120, startX, startY, startX, startY - 150);
+                var randX = Random(-50, 50);
+                var randY = Random(-50, 50);
+                item.Move(0, StartTime + 35745 - 33120, StartTime + 39120 - 33120,
+                    startX + randX, startY - 150 + randY, startX + randX, startY - 150 + randY);
                 item.Scale(StartTime, 0.4);
 
                 item.Move(0, StartTime + 39120 - 33120, StartTime + 41745 - 33120, startX, startY - 400, startX, startY - 550);
+                randX = Random(-50, 50);
+                randY = Random(-50, 50);
+                item.Move(0, StartTime + 41745 - 33120, StartTime + 42120 - 33120,
+                    startX + randX, startY - 550 + randY, startX + randX, startY - 550 + randY);
                 HideItem(item);
             }
 
@@ -74,6 +95,10 @@ namespace StorybrewScripts
             line.Rotate(33870, Math.PI / 2);
             line.ScaleVec((OsbEasing)10, 33870, 34620, 0, 1, 400, 1);
             line.Fade(StartTime + 42120 - 33120, 1);
+            randX1 = Random(-50, 50);
+            randY1 = Random(-50, 50);
+            line.Move(0, StartTime + 35745 - 33120, StartTime + 39120 - 33120,
+                100 + randX1, lineY - 150 + randY1, 100 + randX1, lineY - 150 + randY1);
 
             var line2 = layer.CreateSprite(@"SB\components\line_source.png", OsbOrigin.CentreLeft);
             var line2Y = 555;
@@ -83,6 +108,11 @@ namespace StorybrewScripts
             line2.Rotate(33870, Math.PI / 2);
             line2.ScaleVec((OsbEasing)10, 39870, 40620, 0, 1, 400, 1);
             line2.Fade(StartTime + 42120 - 33120, 1);
+            randX1 = Random(-50, 50);
+            randY1 = Random(-50, 50);
+            line2.Move(0, StartTime + 41745 - 33120, StartTime + 42120 - 33120,
+                540 + randX1, line2Y - 550 + randY1, 540 + randX1, line2Y - 550 + randY1);
+
 
             Lyric1(layer);
             Lyric2(layer);
@@ -135,6 +165,14 @@ namespace StorybrewScripts
                 sprite.Color(StartTime, 0.1, 0.1, 0.1);
                 sprite.MoveY(0, StartTime, StartTime + 35745 - 33120, y, y - 150);
                 sprite.MoveY(0, StartTime + 39120 - 33120, StartTime + 41745 - 33120, y - 400, y - 550);
+
+                var randX1 = Random(-50, 50);
+                var randY1 = Random(-50, 50);
+                sprite.MoveX(0, StartTime + 35745 - 33120, StartTime + 39120 - 1 - 33120,
+                    x + randX1, x + randX1);
+                sprite.MoveY(0, StartTime + 35745 - 33120, StartTime + 39120 - 1 - 33120,
+                    y - 150 + randY1, y - 150 + randY1);
+                sprite.MoveX(StartTime + 39120 - 33120, x);
             }
         }
 
@@ -163,6 +201,14 @@ namespace StorybrewScripts
                 sprite.MoveY(0, StartTime, StartTime + 36120 - 33120, y, y - 150);
                 sprite.MoveY(0, StartTime + 39120 - 33120, StartTime + 41745 - 33120, y - 400, y - 550);
                 sprite.Fade(StartTime + 42120 - 33120, 1);
+
+
+                var randX1 = Random(-50, 50);
+                var randY1 = Random(-50, 50);
+                sprite.MoveX(0, StartTime + 41745 - 33120, StartTime + 42120 - 33120,
+                    x + randX1, x + randX1);
+                sprite.MoveY(0, StartTime + 41745 - 33120, StartTime + 42120 - 33120,
+                    y - 550 + randY1, y - 550 + randY1);
             }
         }
 

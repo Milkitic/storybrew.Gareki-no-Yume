@@ -32,6 +32,8 @@ namespace StorybrewScripts
             RedFadeIn(layer, 183871);
             RedFadeIn(layer, 197371);
 
+            QuickChange(layer, 35745, 8, new CommandColor(0.06, 0.1, 0.2));
+            QuickChange(layer, 41745, 8, new CommandColor(0.06, 0.1, 0.2));
             QuickChange(layer, 158933, 4, new CommandColor(0.06, 0.1, 0.2));
             QuickChange(layer, 203746, 4, new CommandColor(0.02, 0.08, 0.10));
             QuickChange(layer, 209933, 4, new CommandColor(0.02, 0.08, 0.10));

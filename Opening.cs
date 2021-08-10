@@ -103,7 +103,7 @@ namespace StorybrewScripts
             RenderTexts(layer, "電気", 34, 95 - 26, baseY + h / 2 + h, 0.9);
 
             RenderTexts(layer, "Beatmap", 95, 640 - 5, baseY + h / 2 + 5);
-            RenderTexts(layer, "Dored", 70, 640 - 5, baseY + h / 2 + h - 5);
+            //RenderTexts(layer, "Dored", 70, 640 - 5, baseY + h / 2 + h - 5);
 
             RenderTexts(layer, "Storyboard", 120, 640 - 5, baseY - h / 2 - h + 5);
             RenderTexts(layer, "yf_bmp", 75, 640 - 5, baseY - h / 2 - 5);
@@ -118,9 +118,10 @@ namespace StorybrewScripts
             title.Scale((OsbEasing)0, 12121, 12121 + 100, 1.3, 1.0);
             title.Scale((OsbEasing)7, 12121 + 100, 12121 + 700, 1.0, 0.8);
 
+            var fLayer = GetLayer("Foreground");
             for (int i = 0; i < 20; i++)
             {
-                var fog = layer.CreateSprite(@"SB\components\fog.png");
+                var fog = fLayer.CreateSprite(@"SB\components\fog.png");
                 var x = Random(-107, 747);
                 var y = Random(0, 480);
                 var start = 17558 + Random(18121 - 17558);

@@ -13,8 +13,8 @@ Config:
     Value: "0"
     DisplayName: "Random seed"
 Layers:
-  78b86270fc1740dcadca205b24fd3a3d:
-    Name: "filter"
+  6cef9ea8af5044f7a8e8a05931147bcc:
+    Name: "Foreground"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes

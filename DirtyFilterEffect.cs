@@ -20,7 +20,7 @@ namespace StorybrewScripts
         public int EndTime = 69121;
         public override void Generate()
         {
-            var layer = GetLayer("filter");
+            var layer = GetLayer("Foreground");
             var preEndTime = StartTime;
             var count = 10;
             var xCount = 3;

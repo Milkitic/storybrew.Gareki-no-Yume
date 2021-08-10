@@ -1,32 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Output</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8FED70CF-82ED-4096-AAC0-09FF8BF1C1A0}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>\</AppDesignerFolder>
+    <TargetFramework>net452</TargetFramework>
+    <Configurations>Output</Configurations>
     <RootNamespace>storyboard</RootNamespace>
     <AssemblyName>storyboard</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Output|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>\</OutputPath>
     <IntermediateOutputPath>..\..\cache\obj</IntermediateOutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <BaseOutputPath>..\..\cache\bin</BaseOutputPath>
+    <BaseIntermediateOutputPath>..\..\cache\obj\</BaseIntermediateOutputPath>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="obj\**" />
+    <None Remove=".gitignore" />
+    <None Remove="project.sbrew.yaml" />
+    <None Remove="*.dll" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK">
       <HintPath>..\..\OpenTK.dll</HintPath>
@@ -34,26 +28,13 @@
     <Reference Include="StorybrewCommon">
       <HintPath>..\..\StorybrewCommon.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
   <ItemGroup>
     <Compile Include="BG.cs" />
     <Compile Include="BlackBlockFilterEffect.cs" />
+    <Compile Include="DiffOnlyTitle.cs" />
     <Compile Include="DirtyFilterEffect.cs" />
     <Compile Include="EffectScript.cs" />
     <Compile Include="End.cs" />
@@ -74,43 +55,8 @@
     <Compile Include="Title.cs" />
     <Compile Include="TitleFinshBreak.cs" />
     <Compile Include="ZhuanChang.cs" />
-    <Compile Include="tools/FontGenerator/Annotations.cs" />
-    <Compile Include="tools/FontGenerator/App.xaml.cs" />
-    <Compile Include="tools/FontGenerator/AssemblyInfo.cs" />
-    <Compile Include="tools/FontGenerator/MainWindow.xaml.cs" />
-    <Compile Include="tools/FontGenerator/OutlinedTextBlock.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/net5.0/FontGenerator.AssemblyInfo.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/net5.0-windows/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/net5.0-windows/App.g.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/net5.0-windows/App.g.i.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/net5.0-windows/FontGenerator.AssemblyInfo.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/net5.0-windows/GeneratedInternalTypeHelper.g.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/net5.0-windows/GeneratedInternalTypeHelper.g.i.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/net5.0-windows/MainWindow.g.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/net5.0-windows/MainWindow.g.i.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
-    <Compile Include="tools/FontGenerator/obj/Debug/netcoreapp3.1/FontGenerator.AssemblyInfo.cs" />
-    <Compile Include="tools/FontGeneratorEng/Annotations.cs" />
-    <Compile Include="tools/FontGeneratorEng/App.xaml.cs" />
-    <Compile Include="tools/FontGeneratorEng/AssemblyInfo.cs" />
-    <Compile Include="tools/FontGeneratorEng/MainWindow.xaml.cs" />
-    <Compile Include="tools/FontGeneratorEng/OutlinedTextBlock.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0/FontGenerator.AssemblyInfo.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/App.g.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/App.g.i.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/FontGenerator.AssemblyInfo.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/GeneratedInternalTypeHelper.g.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/GeneratedInternalTypeHelper.g.i.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/MainWindow.g.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/net5.0-windows/MainWindow.g.i.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
-    <Compile Include="tools/FontGeneratorEng/obj/Debug/netcoreapp3.1/FontGenerator.AssemblyInfo.cs" />
-    <Compile Include="tools/itai/itai/Program.cs" />
-    <Compile Include="tools/itai/itai/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
-    <Compile Include="tools/itai/itai/obj/Debug/net5.0/itai.AssemblyInfo.cs" />
+    <Compile Include="obj/Debug/net452/.NETFramework,Version=v4.5.2.AssemblyAttributes.cs" />
+    <Compile Include="obj/Debug/net452/scripts.AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
 </Project>
