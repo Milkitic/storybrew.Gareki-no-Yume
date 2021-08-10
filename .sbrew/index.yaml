@@ -1,6 +1,6 @@
 ﻿FormatVersion: 7
-BeatmapId: 2169496
-BeatmapName: "Significant Promise"
+BeatmapId: 2169499
+BeatmapName: "Normal"
 Assemblies:
 Layers:
   - "6c1f139c53b342c6a275ff0745d3c790"
@@ -45,8 +45,6 @@ Layers:
   - "1932bf87ae3a450f9583c00d19050e06"
   - "7f84f062b7df4a2ab74adb499c5b7224"
   - "0de9deeaf47146f3851179bf17b80372"
-  - "c596e8654f004f559c0c5670516c7742"
-  - "20c7d8f18cda4276b60886c30f0f5e56"
   - "875f3672aab845668a8680cc5b33e922"
   - "6cef9ea8af5044f7a8e8a05931147bcc"
   - "f946bd5d1b1a472c8526848c1a07c723"
@@ -56,10 +54,12 @@ Layers:
   - "73cb113b02be4ce38a69b6fd08c9f11a"
   - "8ce1e0da5d0d40629b74a44042c77909"
   - "74c128b1f4974182b44584ba8a0c3ae8"
-  - "1fecdb623e13484dbab89469d51eb6e4"
   - "4b2f0fd6384f424ea0b2bd44013d5dc6"
   - "bcbc725fe2c24a29a8ed034c070314eb"
   - "00810788c352423da82b06cadbc750df"
   - "289a7a6f7bd24d1aa15d9ec376a06533"
-  - "647528b6d8fd40cd82e86e49f33cbe89"
   - "2bfec94d726e4ce0b12a18272ef17fb0"
+  - "647528b6d8fd40cd82e86e49f33cbe89"
+  - "c596e8654f004f559c0c5670516c7742"
+  - "20c7d8f18cda4276b60886c30f0f5e56"
+  - "1fecdb623e13484dbab89469d51eb6e4"
